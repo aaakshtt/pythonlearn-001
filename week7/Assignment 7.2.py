@@ -13,17 +13,16 @@ You can download the sample data at http://www.pythonlearn.com/code/mbox-short.t
 
 # Updated assignment asks users to not use sum() function or variable name in their solution
 # Use the file name mbox-short.txt as the file name
-fname = raw_input("Enter file name: ")
-if len(fname) == 0:
-    fname = 'mbox-short.txt'
+fname = input("Enter file name: ")
 fh = open(fname)
-count = 0
-tot = 0
-ans = 0
+total=0
+count=0
 for line in fh:
     if not line.startswith("X-DSPAM-Confidence:") : continue
-    count = count + 1
+    count=count+1
     num = float(line[21:])
-    tot = num + tot
-ans = tot / count
-print "Average spam confidence:", ans
+    total = total + num
+    average=total/count
+print("Average spam confidence:", average)
+
+
